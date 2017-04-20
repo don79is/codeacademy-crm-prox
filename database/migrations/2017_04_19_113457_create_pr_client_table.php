@@ -15,7 +15,7 @@ class CreatePrClientTable extends Migration {
 		Schema::create('pr_client', function(Blueprint $table)
 		{
 			$table->integer('count', true);
-			$table->string('id', 45)->unique('id_UNIQUE');
+			$table->string('id', 36)->unique('id_UNIQUE');
 			$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->timestamp('update_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->softDeletes();
