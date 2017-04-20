@@ -17,7 +17,7 @@ class CreatePrClientPersonsConnectionsTable extends Migration {
 			$table->integer('count', true);
 			$table->string('id', 36)->unique('id_UNIQUE');
 			$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-			$table->timestamp('update_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+			$table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->softDeletes();
 			$table->string('client_id', 36)->index('fk_pr_client_person_description_connections_pr_client1_idx');
 			$table->string('persons_id', 36)->index('fk_pr_client_person_description_connections_pr_persons1_idx');
