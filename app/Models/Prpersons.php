@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class Prpersons extends CoreModel
+class PrPersons extends CoreModel
 {
     protected $table = 'pr_persons';
 
