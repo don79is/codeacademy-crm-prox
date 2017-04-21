@@ -1,21 +1,21 @@
 <?php
 
+Route::get('/persons',[
 
-use App\Models\Prpersons;
+    'uses' => 'PrPersonsController@index'
 
-    Route::get('/', function () {
+]);
 
-    return  Prpersons::get();
-});
+Route::get('/generate-fake-data/persons/{count?}',[
 
-
-    Route::get('/new-person', function () {
-
-    return Prpersons::create([
-        'id' => Ramsey\Uuid\Uuid::uuid4(),
-        'name'=>'Algis',
-        'email'=>'doni79@mail.com',
-        'phone'=>'86707579'
+    'uses' => 'FakeDataController@generatePersons'
 
     ]);
-    });
+
+
+
+
+
+
+
+

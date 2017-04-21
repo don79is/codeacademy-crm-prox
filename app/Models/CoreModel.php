@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Ramsey\Uuid\Uuid;
 
 class CoreModel extends Model
 {
@@ -11,7 +12,7 @@ class CoreModel extends Model
     {
         parent::boot();
         static::creating(function ($model) {
-            $model->{$model->getKeyName()} = (string)$model::generateNewId();
+            $model->{$model->getKeyName()} =  Uuid::uuid4();
         });
     }
 
@@ -23,11 +24,11 @@ class CoreModel extends Model
             return $this->attributes['id'];
 
         }
-        return uuid4();
+        return Uuid::uuid4();
     }
 
-    use SoftDeletes;
+   use SoftDeletes;
 
-    public $incrementing = false;
+   public $incrementing = false;
 }
 
