@@ -12,6 +12,18 @@ Route::get('/generate-fake-data/persons/{count?}',[
 
     ]);
 
+Route::get('/client',[
+
+    'uses' => 'PrClientController@index'
+
+]);
+
+Route::get('/generate-fake-data/client/{count?}',[
+
+    'uses' => 'FakeDataController@generateClient'
+
+]);
+
 
 
 

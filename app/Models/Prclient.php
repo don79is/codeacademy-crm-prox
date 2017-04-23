@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class Prclient extends CoreModel
+class PrClient extends CoreModel
 {
     protected $table = 'pr_client';
 
