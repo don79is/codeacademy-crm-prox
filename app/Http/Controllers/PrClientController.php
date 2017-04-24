@@ -14,8 +14,8 @@ class PrClientController extends Controller {
 	public function index()
 	{
         return PrClient::orderBy('created_at','desc')//builder
-        ->select('id','name')//builder
-        ->first(); //istraukimas gale get() first()
+        ->select('id','name','client_type')//builder
+        ->get(); //istraukimas gale get() first()
 	}
 
 	/**
