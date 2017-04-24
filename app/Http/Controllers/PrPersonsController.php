@@ -17,7 +17,7 @@ class PrPersonsController extends Controller {
     {
         return PrPersons::orderBy('created_at','desc')//builder
             ->select('id','name','email','phone')//builder
-            ->first(); //istraukimas gale get() first()
+            ->get(); //istraukimas gale get() first()
 
     }
 
