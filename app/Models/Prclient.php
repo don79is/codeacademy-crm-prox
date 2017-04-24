@@ -6,5 +6,5 @@ class PrClient extends CoreModel
 {
     protected $table = 'pr_client';
 
-    protected $fillable = ['id', 'name'];
+    protected $fillable = ['id', 'name','client_type'];
 }
