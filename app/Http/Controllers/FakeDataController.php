@@ -194,7 +194,7 @@ class FakeDataController extends Controller
                 'client_id' => PrClient::all()->random()->id,
                 'persons_id' => PrPersons::all()->random()->id,
                 'positions_id' => PrClientPersonsPositions::all()->random()->id,
-                'comment' => $faker-> text
+                'comment' => $faker->text
 
             ]);
 

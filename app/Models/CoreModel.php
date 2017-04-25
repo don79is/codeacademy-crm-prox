@@ -8,11 +8,12 @@ use Ramsey\Uuid\Uuid;
 
 class CoreModel extends Model
 {
+
     protected static function boot()
     {
         parent::boot();
         static::creating(function ($model) {
-            $model->{$model->getKeyName()} =  Uuid::uuid4();
+            $model->{$model->getKeyName()} = Uuid::uuid4();
         });
     }
 
@@ -27,8 +28,8 @@ class CoreModel extends Model
         return Uuid::uuid4();
     }
 
-   use SoftDeletes;
+    use SoftDeletes;
 
-   public $incrementing = false;
+    public $incrementing = false;
 }
 
