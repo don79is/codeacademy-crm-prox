@@ -7,4 +7,8 @@ class PrClientPersonsPositions extends CoreModel
     protected $table = 'pr_client_persons_positions';
 
     protected $fillable = ['id', 'name', 'description'];
+
+    protected $hidden = ['count','created_at','updated_at','deleted_at'];
+
+
 }

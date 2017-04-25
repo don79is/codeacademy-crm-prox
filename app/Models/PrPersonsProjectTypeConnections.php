@@ -8,4 +8,5 @@ class PrPersonsProjectTypeConnections extends CoreModel
 
     protected $fillable = ['id', 'name', 'project_id', 'persons_id', 'persons_types_id'];
 
+    protected $hidden = ['count','created_at','updated_at','deleted_at'];
 }
