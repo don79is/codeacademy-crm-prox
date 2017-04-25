@@ -14,9 +14,12 @@ class PrClientController extends Controller
      */
     public function index()
     {
-        return PrClient::orderBy('created_at', 'desc')//builder
-        ->select('id', 'name', 'client_type')//builder
-        ->get(); //istraukimas gale get() first()
+        return PrClient::get();
+        //PrClient::all(); //istraukimas gale get() first()
+       // $configuration = [
+           // "example" => "labas rytas",
+           //"client" =>PrClient::with(['projects','clientPersons'])->get()];
+       // return view ('data',$configuration);
     }
 
     /**
