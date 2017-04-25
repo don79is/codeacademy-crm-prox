@@ -1,8 +1,18 @@
 <?php
 
+use App\Models\PrClientPersonsConnections;
+
 Route::get('/', function () {
-    return view('welcome');
+
+return PrClientPersonsConnections::with('personsData','clientData' ,'ClientPersonsPositionsData')->get();
+
+
     });
+
+
+
+
+
 
 Route::group(['prefix' => '/persons'],function () {
 
@@ -92,7 +102,7 @@ Route::get('/generate-fake-data/loginsNames/{count?}', [
 Route::get('/generate-fake-data/logins/{count?}', [
     'uses' => 'FakeDataController@generateLogins'
 ]);
-Route::get('/generate-fake-data/projectsTypes/{count?}', [
+Route::get('/generate-fake-data/clientPersonsPositions/{count?}', [
     'uses' => 'FakeDataController@generateClientPersonsPositions'
 ]);
 Route::get('/generate-fake-data/projectsTypes/{count?}', [
