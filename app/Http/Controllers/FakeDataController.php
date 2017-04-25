@@ -12,7 +12,7 @@ use App\Models\PrLoginsNames;
 use App\Models\PrLoginsProjectsConnections;
 use App\Models\PrPersons;
 use App\Models\PrPersonsProjectTypeConnections;
-use App\Models\PrPersonTypes;
+use App\Models\PrPersonsTypes;
 use App\Models\PrProjects;
 use App\Models\PrProjectsTypes;
 use Faker\Factory;
@@ -20,6 +20,11 @@ use Illuminate\Http\Request;
 
 class FakeDataController extends Controller
 {
+    /**
+     * @param int $count
+     *
+     *
+     */
     public function generatePersons(int $count = 10)
     {
         $faker = Factory::create();
@@ -36,6 +41,11 @@ class FakeDataController extends Controller
         }
     }
 
+    /**
+     * @param int $count
+     *
+     */
+
     public function generateClient(int $count = 1)
     {
         $faker = Factory::create();
@@ -50,6 +60,11 @@ class FakeDataController extends Controller
 
         }
     }
+
+    /**
+     * @param int $count
+     *
+     */
 
     public function generateProjects(int $count = 1)
     {
@@ -69,6 +84,11 @@ class FakeDataController extends Controller
         }
     }
 
+    /**
+     * @param int $count
+     *
+     */
+
     public function generateProjectsTypes(int $count = 1)
     {
         $faker = Factory::create();
@@ -85,6 +105,12 @@ class FakeDataController extends Controller
         }
     }
 
+    /**
+     * @param int $count
+     *
+     *
+     */
+
 
     public function generateClientPersonsPositions(int $count = 1)
     {
@@ -100,6 +126,12 @@ class FakeDataController extends Controller
 
         }
     }
+
+    /**
+     * @param int $count
+     *
+     *
+     */
 
     public function generateLogins(int $count = 1)
     {
@@ -119,6 +151,12 @@ class FakeDataController extends Controller
         }
     }
 
+    /**
+     * @param int $count
+     *
+     *
+     */
+
     public function generateLoginsNames(int $count = 1)
     {
         $faker = Factory::create();
@@ -133,6 +171,12 @@ class FakeDataController extends Controller
 
         }
     }
+
+    /**
+     * @param int $count
+     *
+     *
+     */
 
     public function generateLoginsProjectsConnections(int $count = 1)
     {
@@ -150,13 +194,20 @@ class FakeDataController extends Controller
         }
     }
 
-    public function generatePersonTypes(int $count = 1)
+    /**
+     * @param int $count
+     *
+     *
+     *
+     */
+
+    public function generatePersonsTypes(int $count = 1)
     {
         $faker = Factory::create();
 
 
         for ($i = 0; $i < $count; $i++) {
-            PrPersonTypes::create([
+            PrPersonsTypes::create([
                 'id' => $faker->uuid,
                 'name' => $faker->randomElement(['haker', 'mokinys', 'programuotojas', 'stazuotojas']),
                 'description' => $faker->paragraph
@@ -164,6 +215,12 @@ class FakeDataController extends Controller
 
         }
     }
+
+    /**
+     * @param int $count
+     *
+     *
+     */
 
     public function generatePersonsProjectTypeConnections(int $count = 1)
     {
@@ -176,12 +233,19 @@ class FakeDataController extends Controller
                 'name' => $faker->name,
                 'project_id' => PrProjects::all()->random()->id,
                 'persons_id' => PrPersons::all()->random()->id,
-                'persons_types_id' => PrPersonTypes::all()->random()->id
+                'persons_types_id' => PrPersonsTypes::all()->random()->id
 
             ]);
 
         }
     }
+
+    /**
+     * @param int $count
+     *
+     *
+     *
+     */
 
     public function generateClientPersonsConnections(int $count = 1)
     {
