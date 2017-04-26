@@ -14,7 +14,7 @@ class PrPersonsProjectTypeConnections extends CoreModel
     }
     public function projectsData ()
     {
-        return $this->hasOne(PrProjects::class, 'id' ,'project_id' );
+        return $this->hasMany(PrProjects::class, 'id' ,'project_id' );
     }
     public function personsTypesData ()
     {

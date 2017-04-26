@@ -10,7 +10,7 @@ class PrClient extends CoreModel
 
     protected $appends = ['is_company'];
 
-        public function projects() //funkcija su $with
+    public function projects()
     {
         return $this->hasMany(PrProjects::class, 'client_id', 'id');
     }
@@ -20,7 +20,7 @@ class PrClient extends CoreModel
         return $this->hasMany(PrClientPersonsConnections::class, 'client_id', 'id')->with('personData');
     }
 
-    public function getIsCompanyAttribute() //funkcija su $appends
+    public function getIsCompanyAttribute()
     {
         return $this->client_type == 'J';
     }

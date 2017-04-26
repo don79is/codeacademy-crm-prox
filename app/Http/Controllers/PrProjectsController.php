@@ -16,8 +16,15 @@ class PrProjectsController extends Controller
      */
     public function index()
     {
-        return PrProjects::get();
+        $configuration = [];
 
+        $configuration['projects'] = PrProjects::with(['client','totalPersons'])->get()->toArray();
+        $configuration['totalCount'] = sizeOf($configuration['projects']);
+
+
+      //dd($configuration['projects']);
+
+      return view('content.projects', $configuration);
 
     }
 

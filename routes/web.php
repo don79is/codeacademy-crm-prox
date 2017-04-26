@@ -2,13 +2,13 @@
 
 use App\Models\PrClientPersonsConnections;
 use App\Models\PrLoginsProjectsConnections;
+use App\Models\PrPersonsProjectTypeConnections;
 
-Route::get('/', function () {
+Route::get('/', function ()
+{
+return view('main');
+});
 
-return PrLoginsProjectsConnections::with('loginData','projectsData')->get();
-
-
-    });
 
 
 

@@ -14,12 +14,15 @@ class PrClientController extends Controller
      */
     public function index()
     {
-        return PrClient::get();
-        //PrClient::all(); //istraukimas gale get() first()
-       // $configuration = [
-           // "example" => "labas rytas",
-           //"client" =>PrClient::with(['projects','clientPersons'])->get()];
-       // return view ('data',$configuration);
+        $configuration = [];
+
+        $configuration['client'] = PrClient::with(['projects'])->get();
+        $configuration['totalCount'] = sizeOf($configuration['client']);
+
+        //return $configuration['client'];
+
+        return view('content.client', $configuration);
+
     }
 
     /**
