@@ -1,10 +1,11 @@
 <?php
 
 use App\Models\PrClientPersonsConnections;
+use App\Models\PrLoginsProjectsConnections;
 
 Route::get('/', function () {
 
-return PrClientPersonsConnections::with('personsData','clientData' ,'ClientPersonsPositionsData')->get();
+return PrLoginsProjectsConnections::with('loginData','projectsData')->get();
 
 
     });
