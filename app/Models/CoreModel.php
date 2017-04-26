@@ -9,6 +9,8 @@ use Ramsey\Uuid\Uuid;
 class CoreModel extends Model
 {
 
+    protected $hidden = ['count','created_at','updated_at','deleted_at'];
+
     protected static function boot()
     {
         parent::boot();

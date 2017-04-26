@@ -8,8 +8,6 @@ class PrClientPersonsConnections extends CoreModel
 
     protected $fillable = ['id', 'client_id', 'persons_id', 'positions_id', 'comment'];
 
-    protected $hidden = ['count','created_at','updated_at','deleted_at'];
-
     public function personsData ()
     {
         return $this->hasOne(PrPersons::class, 'id' ,'persons_id' );

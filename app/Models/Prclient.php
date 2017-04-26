@@ -10,9 +10,7 @@ class PrClient extends CoreModel
 
     protected $appends = ['is_company'];
 
-    protected $hidden = ['count','created_at','updated_at','deleted_at'];
-
-    public function projects() //funkcija su $with
+        public function projects() //funkcija su $with
     {
         return $this->hasMany(PrProjects::class, 'client_id', 'id');
     }
