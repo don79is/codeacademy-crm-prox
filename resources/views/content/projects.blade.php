@@ -5,8 +5,9 @@
 @section('content')
 
     <div>
-        <table>
-            <tr>
+        <table border="4" style=" border:10px solid brown;
+border-top-color:black;padding:10px 5px">
+            <tr style="color:blue;">
                 <th>Projects</th>
                 <th>Clients</th>
                 <th>People</th>
