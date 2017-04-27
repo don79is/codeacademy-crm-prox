@@ -8,5 +8,8 @@ class PrLogins extends CoreModel
 
     protected $fillable = ['id', 'user', 'pass', 'login_url', 'login_name_id'];
 
-
+    public function loginsNames() //funkcija su $with
+    {
+        return $this->hasOne(PrLoginsNames::class, 'id', 'login_name_id');
+    }
 }
