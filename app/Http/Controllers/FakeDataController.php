@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\PrClient;
-
-
 use App\Models\PrClientPersonsConnections;
 use App\Models\PrClientPersonsPositions;
 use App\Models\PrLogins;
